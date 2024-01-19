@@ -1,0 +1,67 @@
+<div [attr.id]="refId" class="d-flex flex-column">
+  <div class="d-flex p-1">
+    <app-photo (onChange)="changePhoto($event)"></app-photo>
+    <div class="container ms-1 mt-0 border border-2 border-black p-1">
+      <div class="row">
+        <div class="col-4 text-end">
+          <label for="firstName" class="p-1" i18n>First name :</label>
+        </div>
+        <div class="col">
+          <input type="text" class="w-100" name="firstName" [(ngModel)]="user.firstName" />
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-4 text-end">
+          <label for="lastName" class="p-1" i18n>Last name :</label>
+        </div>
+        <div class="col ">
+          <input type="text" class="w-100" name="lastName" [(ngModel)]="user.lastName" />
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-4 text-end">
+          <label for="pseudo" class="p-1" i18n>Pseudo :</label>
+        </div>
+        <div class="col">
+          <input type="text" class="w-100" name="pseudo" [(ngModel)]="user.pseudo" />
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-4 text-end">
+          <label for="dateOfBirth" class="p-1" i18n>Date of birth :</label>
+        </div>
+        <div class="col">
+          <input
+            type="date"
+            class="datePicker w-100"
+            name="dateOfBirth"
+            [(ngModel)]="user.dateOfBirth"
+          />
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-4 text-end">
+          <label for="eMail" class="p-1" i18n>Email :</label>
+        </div>
+        <div class="col">
+          <input type="email" class="w-100" name="eMail" [(ngModel)]="user.eMail" />
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-4 text-end">
+          <label for="locale" class="p-1" i18n>Locale :</label>
+        </div>
+        <div class="col">
+          <select  class="w-100" name="locale" [(ngModel)] = "user.preferredLocale">
+              <option value="en_US" selected="true">USA</option>
+              <option value="fr_FR">France</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+  </div>
+    <div class="m-1 mt-0 border border-2 border-black p-1">
+      <app-address [address]="address" (onChange)="addressChange()"></app-address>
+    </div>
+  </div>

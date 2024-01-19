@@ -1,0 +1,13 @@
+<div class="container">
+  <div class="row">
+    <div class="col-2 text-end">  <label for="address1" class="p-1" width="95px" i18n>Adress :</label></div>
+    <div class="col"><input type="text" class="w-100" name="address1" [(ngModel)]="address.address1" (change)="change()"></div>
+  </div>
+  <div class="row">
+    <div class="col-2 text-end"><label for="address2" class="p-1" width="95px" i18n></label></div>
+    <div class="col"><input type="text" class="w-100"name="address2" [(ngModel)]="address.address2" (change)="change()"></div>
+  </div>
+  <div class="mt-1">
+    <app-city  [city]="address.city" (onChange)="setCity($event)"></app-city>
+  </div>
+</div>

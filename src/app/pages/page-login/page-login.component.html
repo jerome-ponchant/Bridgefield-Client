@@ -1,0 +1,54 @@
+<div
+  class="d-flex flex-column justify-content-center align-items-center"
+  style="height: 100vh; background-image: url('/assets/img/En-construction.gif'); background-position: center; background-repeat: no-repeat"
+>
+  <div class="d-flex flex-column align-items-center">
+    <h1>Bridgefield Rest & Relax</h1>
+    <h2>Demonstration site of Jérôme Ponchant's technical skills</h2>
+    <br><br>
+  </div>
+  <div class="card w-50">
+    <div class="card-header m-1">Login</div>
+    <div class="card-body">
+      <div class="d-flex justify-content-center">
+        <div class="w-48 p-2"><label for="username">User name :</label></div>
+        <div class="w-48 p-2">
+          <input
+            type="text"
+            name="username"
+            class="border border-secondary"
+            [(ngModel)]="auth.userName"
+          />
+        </div>
+      </div>
+      <div class="d-flex justify-content-center">
+        <div class="w-48 p-2">
+          <label for="password">Password :</label>
+        </div>
+        <div class="w-48 p-2">
+          <input
+            type="password"
+            name="password"
+            class="border border-secondary"
+            [(ngModel)]="auth.password"
+          />
+        </div>
+      </div>
+    </div>
+    <div class="card-footer d-flex justify-content-between">
+      <div>
+        <a routerLink="/registration">No account ? <i class="fa-regular fa-face-sad-tear"></i> Register ! <i class="fa-regular fa-face-laugh-beam" style="color: #00ca00;"></i>  ...  </a><br>
+        <a (click)="loginAsGuest()" href="#" i18n>Or log in as guest ...</a>
+      </div>
+      <button type="button" class="button m-1" (click)="onClick()">
+        Submit ...
+      </button>
+    </div>
+  </div>
+  <div class="d-flex flex-column align-items-start w-50 p-3">
+    <div><a href="https://github.com/jerome-ponchant/Bridgefield-REST" target="_blank" i18n>REST server's sources ... </a></div>
+    <div><a href="https://github.com/jerome-ponchant/Bridgefield-Client" target="_blank" i18n>Angular server's sources ... </a></div>
+    <div><a routerLink="/explanation" >Some explanation ...</a></div>
+  </div>
+</div>
+

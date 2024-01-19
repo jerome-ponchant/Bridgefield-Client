@@ -1,0 +1,17 @@
+
+<div class="accordion-item" *ngIf="menuItem.subMenu.length  != 0">
+  <h2 class="accordion-header" id="headingOne">
+    <button class="accordion-button" type="button" data-bs-toggle="collapse" [attr.data-bs-target]="'#collapse-'+menuItem.id" aria-expanded="true" [attr.aria-controls]="'collapse-'+menuItem.id">
+      <i class="{{menuItem.icon}}">&nbsp;</i>{{menuItem.title}}
+    </button>
+  </h2>
+    <div class="card" [attr.id]="'collapse-'+menuItem.id" class="accordion-body accordion-collapse collapse" data-bs-parent="#accordionExample" >
+      <ul class="list-group list-group_flush " [attr.aria-labelledby]="'collapse-'+menuItem.id" >
+      <app-menu-item *ngFor='let sousMenu of menuItem.subMenu' [menuItem]="sousMenu"></app-menu-item>
+      </ul>
+    </div>
+  </div>
+
+        <li class="list-group-item" *ngIf="menuItem.subMenu.length  == 0">
+          <a href='javascript:void(0);' [routerLink]="menuItem.url"> <i class="{{menuItem.icon}}">&nbsp;</i>{{menuItem.title}}</a>
+        </li>

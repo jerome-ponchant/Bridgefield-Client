@@ -1,0 +1,41 @@
+<div class="d-flex flex-column justify-content-center align-items-center" style="height: 100vh">
+  <div class="card">
+    <div class="card-header" i18n>
+      Registration
+    </div>
+    <div class="card-body p-2">
+      <div class="d-flex flex-column">
+        <div class="d-flex">
+          <fieldset class="w-100">
+            <legend i18n>Select a principal type:</legend>
+            <div class="d-flex justify-content-center">
+              <div>
+                <input type="radio" id="user" name="PrincipalType" (change)="onChange(USER_TYPE)" />
+                <label for="user" class="p-1" i18n>User</label>
+              </div>
+              <div>
+                <input type="radio" id="organization" name="PrincipalType" (change)="onChange(ORGANIZATION_TYPE)" />
+                <label for="organization" class="p-1" i18n>Organization</label>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+        <div class="mt-2 mb-2">
+          <app-principal-detail [principal]="principal"></app-principal-detail>
+        </div>
+        <div *ngIf="principalType==USER_TYPE">
+
+          <br><app-user-detail [user]="user"></app-user-detail>
+        </div>
+        <div *ngIf="principalType==ORGANIZATION_TYPE">
+          <br><app-organization-detail [organization]="organization"></app-organization-detail>
+        </div>
+      </div>
+
+      <div class="card-footer d-flex justify-content-end">
+        <button type="button" class="btn-danger m-1 p-1">KO</button>
+        <button type="button" class="btn-primary m-1 p-1" (click)="onClick()">OK</button>
+      </div>
+    </div>
+  </div>
+</div>

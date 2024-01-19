@@ -1,0 +1,49 @@
+  <div class="row">
+    <div class="col-2 text-end">
+      <label for="zip" class="p-1" width="95px" i18n>Zip :</label>
+    </div>
+    <div class="col-2">
+      <input
+        type="text"
+        class="w-100"
+        pattern="[\s0-9]+"
+        name="zip"
+        [(ngModel)]="city.zip"
+        (keyup)="search($event)"
+      />
+    </div>
+    <div class="col-1 text-end"><label for="city" i18n>City :</label></div>
+    <div class="col-2">
+      <input
+        class="w-100"
+        type="text"
+        name="city"
+        [(ngModel)]="city.name2"
+        (keyup)="search($event)"
+      />
+    </div>
+    <div class="col-1 text-end m-0 p-0">
+      <label for="country" i18n>Country :</label>
+    </div>
+    <div class="col">
+      <input
+        type="text"
+        class="w-100"
+        name="country"
+        [(ngModel)]="city.country"
+        (keyup)="search($event)"
+      />
+    </div>
+  </div>
+  <div *ngIf="isDropDownDisplayed"  class="d-flex justify-content-center" #cityDropdown style="position:absolute; width:100%;" >
+    <div class="d-flex justify-content-center border border-1 border-dark m-3 rounded-3 w-90" style=" background-color: white;">
+    <div class="flex-fill m-2 border border-dark" style="height: 200px; overflow-y: scroll;" >
+      <p *ngFor="let city of cities" (click)="change(city)" ngbDropdownItem style="cursor: pointer;">
+        {{ city.zip }}&nbsp;&nbsp;{{ city.name2 }}
+      </p>
+    </div>
+    <div >
+      <a (click)="hide()" class="m-2" ><i  class="fa-solid fa-circle-xmark" style="color: #ff0000;"></i></a>
+    </div>
+  </div>
+  </div>

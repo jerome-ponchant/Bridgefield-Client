@@ -1,0 +1,46 @@
+<div  class="d-flex flex-column">
+  <div class="d-flex p-1">
+    <app-photo (onChange)="changePhoto($event)"></app-photo>
+    <div class="container ms-1 mt-0 border border-2 border-black p-1">
+      <div class="row">
+        <div class="col-4 text-end">
+          <label for="code" class="p-1" i18n>Code :</label>
+        </div>
+        <div class="col">
+          <input type="text" class="w-100" name="code" [(ngModel)]="organization.code" />
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-4 text-end">
+          <label for="name" class="p-1" i18n>Name :</label>
+        </div>
+        <div class="col ">
+          <input type="text" class="w-100" name="name" [(ngModel)]="organization.name" />
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-4 text-end">
+          <label for="contactMail" class="p-1" i18n>Email :</label>
+        </div>
+        <div class="col">
+          <input type="email" class="w-100" name="contactMail" [(ngModel)]="organization.contactMail" />
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-4 text-end">
+          <label for="locale" class="p-1" i18n>Locale :</label>
+        </div>
+        <div class="col">
+          <select  class="w-100" name="locale" [(ngModel)]="organization.preferredLocale">
+              <option value="en_US">USA</option>
+              <option value="fr_FR">France</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+  </div>
+    <div class="m-1 mt-0 border border-2 border-black p-1">
+      <app-address [address]="address" (onChange)="addressChange()"></app-address>
+    </div>
+  </div>
